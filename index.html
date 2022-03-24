@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8>
+    <title>???</title>
+  </head>
+  <body>
+ <input type = button value = 'ввод информации о напитке' onclick='ttt()'>
+<input type = button value = 'получение информации о напитке' onclick='yyy()'>
+<input type = button value = 'удаление информации о напитке' onclick='bbb()'>
+<input type = button value = 'перечень всех напитков' onclick='zzz()'>
+<script>
+
+"use strict"
+function HashStorageFunc() {
+var storage={};
+ this.addValue=function(key,value) {
+ storage[key]=value;
+ }
+this.getValue = function (key){
+return storage[key];
+};
+this.deleteValue = function(key){
+    if(!(key in storage)){
+        return false
+}
+    else { delete storage[key]
+        return true; }
+}
+this.getKeys = function(){
+     return Object.keys(storage)
+    }
+}
+
+var drinkStorage = new HashStorageFunc()
+
+function ttt() {
+var name = prompt('Введите название напитка');
+var alch = prompt('Напиток алкогольный?');
+var recipe  = prompt('Какой рецепт приготовления?');
+drinkStorage.addValue(name, {name, alch, recipe});
+console.log(drinkStorage.getValue(name))
+}  
+
+function yyy(){
+const name = prompt ('Введите название напитка');
+var a=drinkStorage.getValue(name)
+if(a == undefined ){
+alert('такого напитка нет')
+}
+else{
+alert('название напитка: ' + a.name+'\n алкоголь: '+a.alch +'\n рецепт: ' + a.recipe)
+} 
+};
+
+function bbb(){
+const name = prompt('Введите название напитка');
+if (drinkStorage.deleteValue(name)){
+alert(`Напиток удалён`)}
+
+
+else{
+ alert('напитка такого нет')
+}
+
+
+ 
+}
+
+
+function zzz(){
+alert('перечень напитков:'+drinkStorage.getKeys())
+}
+</script>
+
+   
+   
+  
+  
+
+  </body>
+</html>
