@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8>
+    <title>Treesum</title>
+  </head>
+  <body>
+    <script>
+function sum(a){
+    return a.length? a[0]+sum(a.slice(1)):0;}
+console.log(sum([1,3,5,1]))
+
+</script>
+  </body>
+</html>
