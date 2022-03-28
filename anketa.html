@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8>
+    <title> anketa</title>
+  </head>
+  <body>
+<script>
+    "use strict"
+while(true){
+ var fam= prompt ('Введите вашу фамилию:');
+      if (fam==null){
+alert('вы нажали кнопку отмена,введите заново');
+continue
+}
+if(fam.length<2 || ! isNaN(fam)){
+alert ('Вы ввели некоректную фамилию');
+continue
+}
+break
+}
+while(true){
+  let name = prompt ('Введите ваше имя: ');
+    if (name==null){
+alert ('вы нажали кнопку отмена,введите заново');
+continue
+}
+if (name.length<2 || ! isNaN(name)){
+alert ('Вы ввели некоректное имя');
+continue
+}
+break
+}
+while(true){  
+var otw = prompt ('Введите ваше отчество: ');
+  if(otw==null){
+alert('вы нажали кнопку отмена,введите заново');
+continue
+}
+if (otw.length<2 || ! isNaN(otw)){
+alert('Вы ввели не правильное отчество');
+continue
+}
+break
+}
+
+while(true){
+    var age =parseInt(prompt ('Введите ваш возраст:'));
+if(isNaN(age)){
+alert('Нужно вводить цифру')
+continue
+}
+break
+}
+
+    var gender = confirm ('Ваш пол мужской?');
+    if (gender){
+        var pol ='мужской';
+if (age>65)
+var pen='да';
+else
+var pen='нет';
+}
+ else{
+var pol='женский'
+if (age>60)
+var pen='да';
+else
+var pen='нет';
+}
+ 
+alert('ваше ФИО : ' + fam+'  '+ name +'  ' + otw+'\nваш возраст в годах :'+' '+ age+'\nваш возраст в днях :'+' '+ age*365+'\nчерез 5 лет вам будет :'+' '+ (age+5)+'\nваш пол :' +' '+ pol+'\nвы на пенсии:'+' '+pen );
+</script>
+  </body>
+</html>
