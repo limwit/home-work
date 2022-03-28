@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8>
+    <title>Treesum</title>
+  </head>
+  <body>
+    <script>
+
+
+function treeSum(a){
+var sum=0;
+for (var i=0;i< a.length;i++){
+if(typeof (a[i]) == Number)
+ sum+=a[i];
+else
+ sum += treeSum(a[i]);
+}
+return sum
+}
+console.log(treeSum([1,2,3,9,[7,1],1]));
+
+</script>
+  </body>
+</html>
